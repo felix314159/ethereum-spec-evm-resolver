@@ -127,10 +127,6 @@ def get_default_resolutions() -> Dict[str, Resolution]:
             "branch": "forks/bpo1",
             "commit": "038c16f28906cee43544d73f694049265e51a8a5"
         },
-        "Prague": {
-            "git_url": "https://github.com/ethereum/execution-specs.git",
-            "branch": "forks/prague",
-        },
     }
     for fork_name in [
         "Frontier",
@@ -145,6 +141,11 @@ def get_default_resolutions() -> Dict[str, Resolution]:
         "Merge",
         "Shanghai",
         "Cancun",
+        "Prague",
+        "Osaka",
+        "BPO1",
+        "BPO2",
+        "BPO3"
     ]:
         resolutions[fork_name] = {"same_as": "EELSMaster"}
     return TypeAdapter(Dict[str, Resolution]).validate_python(resolutions)

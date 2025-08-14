@@ -174,13 +174,12 @@ env_resolutions = get_env_resolutions()
 
 
 def get_fork_resolution(fork_name: str) -> Resolution:
-    print(f"env resolutions: {env_resolutions}\ndefault resolutions: {default_resolutions}\n")
     if fork_name in env_resolutions:
         return env_resolutions[fork_name]
     elif fork_name in default_resolutions:
         return default_resolutions[fork_name]
     else:
-        raise Exception(f"Unable to resolve the fork: {fork_name}")
+        raise Exception(f"Unable to resolve fork: {fork_name}")
 
 
 def get_fork_resolution_info(fork: str) -> Dict[str, str]:
